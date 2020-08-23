@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
   ul, li, h1, h2, h3, p, button {
     margin: 0;
-    margin: 0;
+    padding: 0;
   }
 
   ul {
@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: #fefefe;
     height: 100vh;
+    margin: 0 auto;
     max-width: 500px;
     overscroll-behavior: none;
     width: 100%;
@@ -36,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   #app {
     box-shadow: 0 0 10px rgba(0, 0, 0, .05);
     overflow-x: hidden;
+    min-height: 100vh;
     padding-bottom: 10px;
   }
 `
