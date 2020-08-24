@@ -3,41 +3,63 @@ import { Category } from '../Category'
 
 import { List, Item } from './styles'
 
-export const ListOfCategories = () => {
+function useCategoriesData() {
   const [categories, setCategories] = useState([])
-
-  const [showFixed, setShowFixed] = useState(false)
+  const [loading, setLoading] = useState([])
 
   useEffect(function () {
+    setLoading(true)
+
     window
       .fetch('https://petgram-server-juancaricodev.vercel.app/categories')
       .then((res) => res.json())
       .then((response) => {
         setCategories(response)
+        setLoading(false)
       })
   }, [])
 
-  useEffect(function () {
-    const onScroll = () => {
-      const newShowFixed = window.scrollY > 200
+  return { categories, loading }
+}
 
-      showFixed !== newShowFixed && setShowFixed(newShowFixed)
-    }
+export const ListOfCategories = () => {
+  const { categories, loading } = useCategoriesData()
+  const [showFixed, setShowFixed] = useState(false)
 
-    document.addEventListener('scroll', onScroll)
+  useEffect(
+    function () {
+      const onScroll = () => {
+        const newShowFixed = window.scrollY > 200
 
-    return () => document.removeEventListener('scroll', onScroll)
-  }, [showFixed])
+        showFixed !== newShowFixed && setShowFixed(newShowFixed)
+      }
+
+      document.addEventListener('scroll', onScroll)
+
+      return () => document.removeEventListener('scroll', onScroll)
+    },
+    [showFixed]
+  )
 
   const renderList = (fixed) => (
     <List fixed={fixed}>
-      {categories.map((category) => (
-        <Item key={category.id}>
-          <Category {...category} />
+      {loading ? (
+        <Item key='loading'>
+          <Category />
         </Item>
-      ))}
+      ) : (
+        categories.map((category) => (
+          <Item key={category.id}>
+            <Category {...category} />
+          </Item>
+        ))
+      )}
     </List>
   )
+
+  // if (loading) {
+  //   return 'Loaging...'
+  // }
 
   return (
     <>
