@@ -14,14 +14,16 @@ export const App = () => {
     <>
       <GlobalStyle />
       <Logo />
-      {detailId ? (
-        <PhotoCardWithQuery id={detailId} />
-      ) : (
-        <Router>
-          <Home path='/' />
-          <Home path='/pet/:id' />
-        </Router>
-      )}
+      {
+        detailId
+          ? <PhotoCardWithQuery id={detailId} />
+          : (
+            <Router>
+              <Home path='/' />
+              <Home path='/pet/:categoryId' />
+            </Router>
+          )
+      }
     </>
   )
 }
