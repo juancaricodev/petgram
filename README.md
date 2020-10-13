@@ -7,6 +7,7 @@ React app developed by following the [Advanced React](https://platzi.com/clases/
 * React
 * Webpack
 * Styled Components
+* Reach Router
 * GraphQL
 * Apollo Client
 * Vercel
