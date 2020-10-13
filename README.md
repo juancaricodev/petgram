@@ -1,5 +1,17 @@
-# curso-platzi-react-avanzado ⚛️
+# Petgram App ⚛️
 
-¡Sígueme en Youtube! https://www.youtube.com/midudev
+React app developed by following the [Advanced React](https://platzi.com/clases/react-avanzado) course.
 
-Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)
+## Technologies
+
+* React
+* Webpack
+* Styled Components
+* GraphQL
+* Apollo Client
+
+### Aditional Information
+
+The course was mentored by [midudev](https://github.com/midudev)
+
+Here you can find more information about the course and the original repo: [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)
