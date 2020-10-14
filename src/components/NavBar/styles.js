@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as LinkRouter } from '@reach/router'
 
 export const Nav = styled.nav`
   align-items: center;
@@ -15,4 +16,14 @@ export const Nav = styled.nav`
   right: 0;
   width: 100%;
   z-index: 1000;
+`
+
+export const Link = styled(LinkRouter)`
+  align-items: center;
+  color: #888;
+  display: inline-flex;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  width: 100%
 `
