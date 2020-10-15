@@ -1,5 +1,5 @@
 import React from 'react'
 
 export const Favs = () => (
-  <h1>User</h1>
+  <h1>Favs</h1>
 )
