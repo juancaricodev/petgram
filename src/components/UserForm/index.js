@@ -1,25 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useInputValue } from '../../hooks/useInputValue'
 
 export const UserForm = ({ onSubmit }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const email = useInputValue('')
+  const password = useInputValue('')
 
   return (
     <form onSubmit={onSubmit}>
       <input
         placeholder='Email'
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value)
-        }}
+        type='email'
+        {...email}
       />
       <input
         placeholder='Password'
         type='password'
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value)
-        }}
+        {...password}
       />
       <button>Login</button>
     </form>
